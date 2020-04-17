@@ -16,4 +16,10 @@ class Malaltia(models.Model):
 
     duradaTractament = fields.Char(string= 'Durada tractament', required= True, size= 4)
 
+
+    # MANY TO ONE
     malaltia_id = fields.Many2one('hospital.hospital', ondelete='cascade', string='Hospital', required=True)
+
+
+    # ONE TO ONE: VISITA
+    visita_id = fields.Many2one('hospital.visita', string='Diagnostic')

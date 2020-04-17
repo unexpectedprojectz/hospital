@@ -8,6 +8,10 @@ class Historial(models.Model):
 
     codi = fields.Integer(string= 'Codi historial', required= False, size= 30)
 
+
+    # MANY TO ONE
     hospital_id = fields.Many2one('hospital.hospital', ondelete= 'cascade', string='Hospital', required=True)
 
+
+    # ONE TO MANY
     visita_ids = fields.One2many('hospital.visita', 'historial_id', string='Visites')

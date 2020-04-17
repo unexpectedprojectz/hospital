@@ -17,3 +17,15 @@ class Adreca(models.Model):
     planta = fields.Char(string= 'Planta', required= True, size= 3)
 
     porta = fields.Char(string= 'Porta', required= False, size= 3)
+
+
+    # ONE TO ONE: HOSPITAL
+    hospital_id = fields.Many2one('hospital.hospital', string='Hospital')
+
+
+    # ONE TO ONE: METGE
+    metge_id = fields.Many2one('hospital.metge', string='Metge')
+
+
+    # ONE TO ONE: PACIENT
+    pacient_id = fields.Many2one('hospital.pacient', string='Pacient')
