@@ -8,4 +8,4 @@ class Pacient(models.Model):
 
     _inherit = 'hospital.persona'
 
-    hospital_id = fields.Many2one('hospital.hospital', ondelete='cascade', string='Hospital', required=False)
+    hospital_id = fields.Many2one('hospital.hospital', ondelete='cascade', string='Hospital', required=True)
