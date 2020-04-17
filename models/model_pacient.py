@@ -10,7 +10,7 @@ class Pacient(models.Model):
 
 
     # MANY TO ONE
-    hospital_id = fields.Many2one('hospital.hospital', ondelete='cascade', string='Hospital', required=True)
+    hospital_id = fields.Many2one('hospital.hospital', ondelete='cascade', string='al', required=True)
 
 
     # ONE TO ONE: ADRECA
