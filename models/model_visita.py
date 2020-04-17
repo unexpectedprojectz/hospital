@@ -8,4 +8,4 @@ class Visita(models.Model):
 
     data = fields.Date(string= 'Data', required= False, size= 30)
 
-    historial_id = fields.Many2one('hospital.hospital', ondelete=cascade, string='Hospital', required=True)
+    historial_id = fields.Many2one('hospital.hospital', ondelete='cascade', string='Hospital', required=True)

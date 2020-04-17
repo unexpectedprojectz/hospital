@@ -14,4 +14,4 @@ class Metge(models.Model):
 
     codiCompteCorrent = fields.Char(string= 'Codi compte corrent', required= False, size= 20)
 
-    hospital_id = fields.Many2one('hospital.hospital', ondelete= cascade, string='Hospital', required=True)
+    hospital_id = fields.Many2one('hospital.hospital', ondelete= 'cascade', string='Hospital', required=True)

@@ -16,4 +16,4 @@ class Malaltia(models.Model):
 
     duradaTractament = fields.Char(string= 'Durada tractament', required= True, size= 4)
 
-    malaltia_id = fields.Many2one('hospital.hospital', ondelete=cascade, string='Hospital', required=True)
+    malaltia_id = fields.Many2one('hospital.hospital', ondelete='cascade', string='Hospital', required=True)
