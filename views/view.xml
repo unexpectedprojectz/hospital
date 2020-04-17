@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <data>
+
+        <act_window id="accio_categoria_window" name="Joc" res_model="joc.carta" view_mode="tree,form"/>
+
+        <menuitem name="Joc - Menú principal" id="joc.menu_principal"/>
+
+        <menuitem name="Menú carta" id="joc.carta" parent="joc.menu_principal" action="accio_categoria_window"/>
+
+    </data>
+
+</odoo>
+
