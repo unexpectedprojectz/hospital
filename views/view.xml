@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <odoo>
-    <!-- adam puto -->
+    <!-- adam puto3 -->
 
        <!-- session form view -->
         <record model="ir.ui.view" id="hospital_form_view">
