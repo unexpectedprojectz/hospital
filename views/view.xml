@@ -2,15 +2,77 @@
 
 <odoo>
 
-    <data>
+        <!-- Hospital form view -->
+        <record model="ir.ui.view" id="hospital_form_view">
+            <field name="name">hospital.form</field>
+            <field name="model">hospital.hospital</field>
+            <field name="arch" type="xml">
+                <form string="Hospital form">
+                    <sheet>
+                        <group>
+                            <field name="nom"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
 
-        <act_window id="accio_categoria_window" name="Joc" res_model="joc.carta" view_mode="tree,form"/>
+        <record model="ir.actions.act_window" id="adreca_list_action">
+            <field name="name">Hospitals</field>
+            <field name="res_model">hospital.hospital</field>
+            <field name="view_type">form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crea un hospital
+                </p>
+            </field>
+        </record>
 
-        <menuitem name="Joc - Menú principal" id="joc.menu_principal"/>
+         <!-- top level menu: no parent -->
+        <menuitem id="main_hospital_menu" name="Hospital"/>
+        <!-- A first level in the left side menu is needed
+             before using action= attribute -->
+        <menuitem id="hospital_menu" name="Hospital"
+                  parent="main_hospital_menu"/>
+        <!-- the following menuitem should appear *after*
+             its parent openacademy_menu and *after* its
+             action course_list_action -->
+        <menuitem id="hospitals_menu" name="Hospitals" parent="hospital_menu"
+                  action="hospitals_list_action"/>
+        <!-- Full id location:
+             action="openacademy.course_list_action"
+             It is not required when it is the same module -->
 
-        <menuitem name="Menú carta" id="joc.carta" parent="joc.menu_principal" action="accio_categoria_window"/>
 
-    </data>
+    <!-- Adreca form view -->
+        <record model="ir.ui.view" id="adreca_form_view">
+            <field name="name">adreca.form</field>
+            <field name="model">hospital.adreca</field>
+            <field name="arch" type="xml">
+                <form string="Adreca form">
+                    <sheet>
+                        <group>
+                            <field name="ciutat"/>
+                            <field name="codiPostal"/>
+                            <field name="carrer"/>
+                            <field name="numero"/>
+                            <field name="planta"/>
+                            <field name="porta"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="adreca_list_action">
+            <field name="name">Adrecas</field>
+            <field name="res_model">hospital.adreca</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="adreca_menu" name="Adrecas"
+                  parent="hospital_menu"
+                  action="adreca_list_action"/>
 
 </odoo>
 
