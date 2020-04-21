@@ -74,5 +74,68 @@
                   parent="hospital_menu"
                   action="adreca_list_action"/>
 
+    <!-- Persona View -->
+    <record model="ir.ui.view" id="persona_form_view">
+            <field name="name">persona.form</field>
+            <field name="model">hospital.persona</field>
+            <field name="arch" type="xml">
+
+            </field>
+        </record>
+
+    <!-- Gestio Hospital View -->
+    <record model="ir.ui.view" id="gestio_hospital_form_view">
+            <field name="name">gestio_hospital.form</field>
+            <field name="model">hospital.gestiohospital</field>
+            <field name="arch" type="xml">
+
+            </field>
+        </record>
+
+    <!-- Historial View -->
+    <record model="ir.ui.view" id="historial_form_view">
+            <field name="name">historial.form</field>
+            <field name="model">hospital.historial</field>
+            <field name="arch" type="xml">
+
+            </field>
+        </record>
+
+    <!-- Malaltia View -->
+    <record model="ir.ui.view" id="malaltia_form_view">
+            <field name="name">malaltia.form</field>
+            <field name="model">hospital.malaltia</field>
+            <field name="arch" type="xml">
+
+            </field>
+        </record>
+
+    <!-- Metge View -->
+    <record model="ir.ui.view" id="metge_form_view">
+            <field name="name">metge.form</field>
+            <field name="model">hospital.form</field>
+            <field name="arch" type="xml">
+
+            </field>
+        </record>
+
+    <!-- Pacient View -->
+    <record model="ir.ui.view" id="pacient_form_view">
+            <field name="name">pacient.form</field>
+            <field name="model">hospital.pacient</field>
+            <field name="arch" type="xml">
+
+            </field>
+        </record>
+
+    <!-- Visita View -->
+    <record model="ir.ui.view" id="visita_form_view">
+            <field name="name">vista.form</field>
+            <field name="model">hospital.visita</field>
+            <field name="arch" type="xml">
+
+            </field>
+        </record>
+
 </odoo>
 
