@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <odoo>
-    <!-- adam puto3 -->
 
-       <!-- session form view -->
+        <!-- Hospital form view -->
         <record model="ir.ui.view" id="hospital_form_view">
             <field name="name">hospital.form</field>
             <field name="model">hospital.hospital</field>
@@ -74,5 +73,6 @@
         <menuitem id="adreca_menu" name="Adrecas"
                   parent="hospital_menu"
                   action="adreca_list_action"/>
+
 </odoo>
 
