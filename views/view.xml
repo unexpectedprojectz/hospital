@@ -2,7 +2,7 @@
 
 <odoo>
 
-    <!-- Hospital form view -->
+    <!-- Hospital View -->
     <record model="ir.ui.view" id="hospital_form_view">
         <field name="name">hospital.form</field>
         <field name="model">hospital.hospital</field>
@@ -38,7 +38,7 @@
     <menuitem id="hospitals_menu" name="Hospitals" parent="hospital_menu" action="hospitals_list_action"/>
 
 
-    <!-- Adreca form view -->
+    <!-- Adreca View -->
     <record model="ir.ui.view" id="adreca_form_view">
         <field name="name">adreca.form</field>
         <field name="model">hospital.adreca</field>
@@ -74,7 +74,33 @@
 
 
     <!-- Persona View -->
-    <!-- No es fa -->
+    <record model="ir.ui.view" id="persona_form_view">
+        <field name="name">persona.form</field>
+        <field name="model">hospital.persona</field>
+        <field name="arch" type="xml">
+            <form string="Persona form">
+                <sheet>
+                    <group>
+                        <field name="nom"/>
+                        <field name="cognom1"/>
+                        <field name="cognom2"/>
+                        <field name="numSegSocial"/>
+                        <field name="nif"/>
+                        <field name="telefon"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="persona_list_action">
+        <field name="name">Persones</field>
+        <field name="res_model">hospital.persona</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="persona_menu" name="Persones" parent="hospital_menu" action="persona_list_action"/>
 
 
     <!-- Gestio Hospital View -->
@@ -166,7 +192,7 @@
     <!-- Metge View -->
     <record model="ir.ui.view" id="metge_form_view">
         <field name="name">metge.form</field>
-        <field name="model">hospital.form</field>
+        <field name="model">hospital.metge</field>
         <field name="arch" type="xml">
             <form string="Metge form">
                 <sheet>
