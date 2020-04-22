@@ -45,7 +45,7 @@
         <field name="arch" type="xml">
             <form string="Adreca form">
                 <sheet>
-	            <group>
+	                <group>
                         <field name="hospital_id"/>
                         <field name="metge_id"/>
                         <field name="pacient_id"/>
