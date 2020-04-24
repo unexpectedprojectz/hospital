@@ -84,7 +84,7 @@
 
     <!-- Gestio Hospital View -->
     <record model="ir.ui.view" id="gestiohospital_form_view">
-        <field name="name">gestio_hospital.form</field>
+        <field name="name">gestiohospital.form</field>
         <field name="model">hospital.gestiohospital</field>
         <field name="arch" type="xml">
             <form string="Gestio Hospital form">
