@@ -15,3 +15,7 @@ class Historial(models.Model):
 
     # ONE TO MANY
     visita_ids = fields.One2many('hospital.visita', 'historial_id', string='Visites')
+
+
+    # ONE TO ONE: PACIENT
+    pacient_id = fields.Many2one('hospital.pacient', ondelete='cascade', string='Pacient')
