@@ -10,7 +10,7 @@ class Visita(models.Model):
 
 
     # MANY TO ONE
-    historial_id = fields.Many2one('hospital.hospital', ondelete='cascade', string='Hospital', required=True)
+    historial_id = fields.Many2one('hospital.historial', ondelete='cascade', string='Hospital', required=True)
 
 
     # ONE TO ONE: MALALTIA

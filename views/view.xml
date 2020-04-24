@@ -3,7 +3,7 @@
 <odoo>
 
     <!-- Hospital View -->
-    <record model="ir.ui.view" id="hospital_form_view">
+    <record model="ir.ui.view" id="hospitals_form_view">
         <field name="name">hospital.form</field>
         <field name="model">hospital.hospital</field>
         <field name="arch" type="xml">
@@ -21,7 +21,7 @@
         </field>
     </record>
 
-    <record model="ir.actions.act_window" id="adreca_list_action">
+    <record model="ir.actions.act_window" id="hospitals_list_action">
         <field name="name">Hospitals</field>
         <field name="res_model">hospital.hospital</field>
         <field name="view_type">form</field>
@@ -164,7 +164,7 @@
             <form string="Malaltia form">
                 <sheet>
                     <group>
-                        <field name="malaltia_id"/>
+                        <field name="hospital_id"/>
                         <field name="visita_id"/>
                     </group>
                     <group>
