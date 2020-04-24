@@ -20,12 +20,12 @@ class Adreca(models.Model):
 
 
     # ONE TO ONE: HOSPITAL
-    hospital_id = fields.Many2one('hospital.hospital', string='Hospital')
+    hospital_id = fields.Many2one('hospital.hospital', ondelete='cascade', string='Hospital')
 
 
     # ONE TO ONE: METGE
-    metge_id = fields.Many2one('hospital.metge', string='Metge')
+    metge_id = fields.Many2one('hospital.metge', ondelete='cascade', string='Metge')
 
 
     # ONE TO ONE: PACIENT
-    pacient_id = fields.Many2one('hospital.pacient', string='Pacient')
+    pacient_id = fields.Many2one('hospital.pacient', ondelete='cascade', string='Pacient')

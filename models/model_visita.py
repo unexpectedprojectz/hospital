@@ -30,7 +30,7 @@ class Visita(models.Model):
             malaltia = self.env['hospital.malaltia'].browse(self.malaltia_ids[0].id)
             malaltia.visita_id = False
         # set new reference
-        self.malaltia_id.visita_id = self
+        self.malaltia_id.visita_id = self.malaltia_ids[0]
 
 
     # ONE TO ONE: METGE
@@ -50,4 +50,4 @@ class Visita(models.Model):
             metge = self.env['hospital.metge'].browse(self.metge_ids[0].id)
             metge.visita_id = False
         # set new reference
-        self.metge_id.visita_id = self
+        self.metge_id.visita_id = self.metge_ids[0]

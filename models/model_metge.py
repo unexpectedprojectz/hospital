@@ -20,7 +20,7 @@ class Metge(models.Model):
 
 
     # ONE TO ONE: VISITA
-    visita_id = fields.Many2one('hospital.visita', string='Visita')
+    visita_id = fields.Many2one('hospital.visita', ondelete='cascade', string='Visita')
 
 
     # ONE TO ONE: ADRECA
@@ -40,4 +40,4 @@ class Metge(models.Model):
             adreca = self.env['hospital.adreca'].browse(self.adreca_ids[0].id)
             adreca.metge_id = False
         # set new reference
-        self.adreca_id.metge_id = self
+        self.adreca_id.metge_id = self.adreca_ids[0]

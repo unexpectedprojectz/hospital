@@ -8,4 +8,4 @@ class GestioHospital(models.Model):
 
 
     # ONE TO ONE: HOSPITAL
-    hospital_id = fields.Many2one('hospital.hospital', string='Hospital')
+    hospital_id = fields.Many2one('hospital.hospital', ondelete='cascade', string='Hospital')

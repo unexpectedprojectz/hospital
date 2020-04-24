@@ -36,7 +36,7 @@ class Hospital(models.Model):
             gestiohospital = self.env['hospital.gestiohospital'].browse(self.gestiohospital_ids[0].id)
             gestiohospital.hospital_id = False
         # set new reference
-        self.gestiohospital_id.hospital_id = self
+        self.gestiohospital_id.hospital_id = self.gestiohospital_ids[0]
 
 
     # ONE TO ONE: ADRECA
@@ -56,4 +56,4 @@ class Hospital(models.Model):
             adreca = self.env['hospital.adreca'].browse(self.adreca_ids[0].id)
             adreca.hospital_id = False
         # set new reference
-        self.adreca_id.hospital_id = self
+        self.adreca_id.hospital_id = self.adreca_ids[0]

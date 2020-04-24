@@ -22,4 +22,4 @@ class Malaltia(models.Model):
 
 
     # ONE TO ONE: VISITA
-    visita_id = fields.Many2one('hospital.visita', string='Diagnostic')
+    visita_id = fields.Many2one('hospital.visita', ondelete='cascade', string='Diagnostic')
