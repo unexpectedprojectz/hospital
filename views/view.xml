@@ -2,6 +2,12 @@
 
 <odoo>
 
+    <!-- Menu de dalt -->
+    <menuitem id="main_hospital_menu" name="Hospital"/>
+    <!-- Menu lateral -->
+    <menuitem id="hospital_menu" name="Hospital" parent="main_hospital_menu"/>
+
+
     <!-- Hospital View -->
     <record model="ir.ui.view" id="hospitals_form_view">
         <field name="name">hospital.form</field>
@@ -10,7 +16,12 @@
             <form string="Hospital form">
                 <sheet>
                     <group>
+                        <field name="metge_ids"/>
+                        <field name="historial_ids"/>
+                        <field name="malaltia_ids"/>
+                        <field name="pacient_ids"/>
                         <field name="gestiohospital_id"/>
+                        <field name="gestiohospital_ids"/>
                         <field name="adreca_id"/>
                     </group>
                     <group>
@@ -30,11 +41,6 @@
         </field>
     </record>
 
-    <!-- Menu de dalt -->
-    <menuitem id="main_hospital_menu" name="Hospital"/>
-    <!-- Menu lateral -->
-    <menuitem id="hospital_menu" name="Hospital" parent="main_hospital_menu"/>
-    <!-- Primer item del menu lateral -->
     <menuitem id="hospitals_menu" name="Hospitals" parent="hospital_menu" action="hospitals_list_action"/>
 
 
@@ -73,34 +79,7 @@
     <menuitem id="adreca_menu" name="Adrecas" parent="hospital_menu" action="adreca_list_action"/>
 
 
-    <!-- Persona View -->
-    <record model="ir.ui.view" id="persona_form_view">
-        <field name="name">persona.form</field>
-        <field name="model">hospital.persona</field>
-        <field name="arch" type="xml">
-            <form string="Persona form">
-                <sheet>
-                    <group>
-                        <field name="nom"/>
-                        <field name="cognom1"/>
-                        <field name="cognom2"/>
-                        <field name="numSegSocial"/>
-                        <field name="nif"/>
-                        <field name="telefon"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
-    <record model="ir.actions.act_window" id="persona_list_action">
-        <field name="name">Persones</field>
-        <field name="res_model">hospital.persona</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <menuitem id="persona_menu" name="Persones" parent="hospital_menu" action="persona_list_action"/>
+    <!-- Persona View (no necessaria) -->
 
 
     <!-- Gestio Hospital View -->
@@ -137,6 +116,7 @@
                 <sheet>
                     <group>
                         <field name="hospital_id"/>
+                        <field name="visita_ids"/>
                         <field name="pacient_id"/>
                     </group>
                     <group>
@@ -201,6 +181,7 @@
                         <field name="hospital_id"/>
                         <field name="visita_id"/>
                         <field name="adreca_id"/>
+                        <field name="adreca_ids"/>
                     </group>
                     <group>
                         <field name="nom"/>
@@ -238,7 +219,9 @@
                     <group>
                         <field name="hospital_id"/>
                         <field name="adreca_id"/>
+                        <field name="adreca_ids"/>
                         <field name="historial_id"/>
+                        <field name="historial_ids"/>
                     </group>
                     <group>
                         <field name="nom"/>
@@ -263,33 +246,7 @@
     <menuitem id="pacient_menu" name="Pacients" parent="hospital_menu" action="pacient_list_action"/>
 
 
-    <!-- Visita View -->
-    <record model="ir.ui.view" id="visita_form_view">
-        <field name="name">vista.form</field>
-        <field name="model">hospital.visita</field>
-        <field name="arch" type="xml">
-            <form string="Visita form">
-                <sheet>
-                    <group>
-                        <field name="historial_id"/>
-                        <field name="malaltia_id"/>
-                        <field name="metge_id"/>
-                    </group>
-                    <group>
-                        <field name="data"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
+    <!-- Visita View (no necessaria) -->
 
-    <record model="ir.actions.act_window" id="visita_list_action">
-        <field name="name">Visites</field>
-        <field name="res_model">hospital.visita</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <menuitem id="visita_menu" name="Visites" parent="hospital_menu" action="visita_list_action"/>
 
 </odoo>
