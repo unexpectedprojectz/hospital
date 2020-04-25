@@ -65,42 +65,13 @@
         <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem id="adreca_menu" name="Adrecas" parent="hospital_menu" action="adreca_list_action"/>
+    <menuitem id="adreca_menu" name="Adreces" parent="hospital_menu" action="adreca_list_action"/>
 
 
     <!-- Persona View (no necessaria) -->
 
 
     <!-- Gestio Hospital View (no necessaria) -->
-
-
-    <!-- Historial View -->
-    <record model="ir.ui.view" id="historial_form_view">
-        <field name="name">historial.form</field>
-        <field name="model">hospital.historial</field>
-        <field name="arch" type="xml">
-            <form string="Historial form">
-                <sheet>
-                    <group>
-                        <field name="hospital_id"/>
-                        <field name="codi"/>
-                    </group>
-                    <group>
-                        <field name="visita_ids"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
-    <record model="ir.actions.act_window" id="historial_list_action">
-        <field name="name">Historials</field>
-        <field name="res_model">hospital.historial</field>
-        <field name="view_type">form</field>
-        <field name="view_mode">tree,form</field>
-    </record>
-
-    <menuitem id="historial_menu" name="Historials" parent="hospital_menu" action="historial_list_action"/>
 
 
     <!-- Malaltia View -->
@@ -133,6 +104,35 @@
     </record>
 
     <menuitem id="malaltia_menu" name="Malalties" parent="hospital_menu" action="malaltia_list_action"/>
+
+
+    <!-- Historial View -->
+    <record model="ir.ui.view" id="historial_form_view">
+        <field name="name">historial.form</field>
+        <field name="model">hospital.historial</field>
+        <field name="arch" type="xml">
+            <form string="Historial form">
+                <sheet>
+                    <group>
+                        <field name="hospital_id"/>
+                        <field name="codi"/>
+                    </group>
+                    <group>
+                        <field name="visita_ids"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="historial_list_action">
+        <field name="name">Historials</field>
+        <field name="res_model">hospital.historial</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="historial_menu" name="Historials" parent="hospital_menu" action="historial_list_action"/>
 
 
     <!-- Metge View -->
