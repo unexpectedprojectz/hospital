@@ -30,7 +30,7 @@ class Pacient(models.Model):
             adreca = self.env['hospital.adreca'].browse(self.adreca_ids[0].id)
             adreca.pacient_id = False
         # set new reference
-        self.adreca_id.pacient_id = self.adreca_ids[0]
+        self.adreca_id.pacient_id = self
 
 
     # ONE TO ONE: HISTORIAL
@@ -50,4 +50,4 @@ class Pacient(models.Model):
             historial = self.env['hospital.historial'].browse(self.historial_ids[0].id)
             historial.pacient_id = False
         # set new reference
-        self.historial_id.pacient_id = self.historial_ids[0]
+        self.historial_id.pacient_id = self

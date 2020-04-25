@@ -14,6 +14,6 @@ class Persona(models.AbstractModel):
 
     numSegSocial = fields.Char(string= 'Núm. seguretat social', required= False, size= 30)
 
-    nif = fields.Char(string= 'NIF', required= True, size= 9)
+    NIF = fields.Char(string= 'NIF', required= True, size= 9)
 
     telefon = fields.Char(string= 'Telèfon', required= False, size= 15)

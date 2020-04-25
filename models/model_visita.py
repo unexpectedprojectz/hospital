@@ -10,7 +10,7 @@ class Visita(models.Model):
 
 
     # MANY TO ONE
-    historial_id = fields.Many2one('hospital.historial', ondelete='cascade', string='Hospital', required=True)
+    historial_id = fields.Many2one('hospital.historial', ondelete='cascade', string='Historial', required=True)
 
 
     # ONE TO ONE: MALALTIA
@@ -30,7 +30,7 @@ class Visita(models.Model):
             malaltia = self.env['hospital.malaltia'].browse(self.malaltia_ids[0].id)
             malaltia.visita_id = False
         # set new reference
-        self.malaltia_id.visita_id = self.malaltia_ids[0]
+        self.malaltia_id.visita_id = self
 
 
     # ONE TO ONE: METGE
@@ -50,4 +50,4 @@ class Visita(models.Model):
             metge = self.env['hospital.metge'].browse(self.metge_ids[0].id)
             metge.visita_id = False
         # set new reference
-        self.metge_id.visita_id = self.metge_ids[0]
+        self.metge_id.visita_id = self

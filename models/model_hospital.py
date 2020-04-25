@@ -19,26 +19,6 @@ class Hospital(models.Model):
     pacient_ids = fields.One2many('hospital.pacient', 'hospital_id', string='Pacients')
 
 
-    # ONE TO ONE: GESTIOHOSPITAL
-    gestiohospital_id = fields.Many2one('hospital.gestiohospital', compute='compute_gestiohospital', inverse='gestiohospital_inverse')
-    gestiohospital_ids = fields.One2many('hospital.gestiohospital', 'hospital_id')
-
-    @api.one
-    @api.depends('gestiohospital_ids')
-    def compute_gestiohospital(self):
-        if len(self.gestiohospital_ids) > 0:
-            self.gestiohospital_id = self.gestiohospital_ids[0]
-
-    @api.one
-    def gestiohospital_inverse(self):
-        if len(self.gestiohospital_ids) > 0:
-            # delete previous reference
-            gestiohospital = self.env['hospital.gestiohospital'].browse(self.gestiohospital_ids[0].id)
-            gestiohospital.hospital_id = False
-        # set new reference
-        self.gestiohospital_id.hospital_id = self.gestiohospital_ids[0]
-
-
     # ONE TO ONE: ADRECA
     adreca_id = fields.Many2one('hospital.adreca', compute='compute_adreca', inverse='adreca_inverse')
     adreca_ids = fields.One2many('hospital.adreca', 'hospital_id')
@@ -56,4 +36,4 @@ class Hospital(models.Model):
             adreca = self.env['hospital.adreca'].browse(self.adreca_ids[0].id)
             adreca.hospital_id = False
         # set new reference
-        self.adreca_id.hospital_id = self.adreca_ids[0]
+        self.adreca_id.hospital_id = self

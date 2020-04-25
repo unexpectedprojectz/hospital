@@ -8,7 +8,8 @@
     'website': 'http://www.copernic.cat',
     'license': 'AGPL-3',
     'category': 'Extra Tools',
-    'summary': 'Hospital CRUD',
+    'description': "Mòdul per a gestions d'hospitals",
+    'summary': "Mòdul per a gestions d'hospitals",
     'depends': ['base'],
     'data': [
         'views/view.xml',

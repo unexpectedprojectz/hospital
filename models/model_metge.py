@@ -40,4 +40,4 @@ class Metge(models.Model):
             adreca = self.env['hospital.adreca'].browse(self.adreca_ids[0].id)
             adreca.metge_id = False
         # set new reference
-        self.adreca_id.metge_id = self.adreca_ids[0]
+        self.adreca_id.metge_id = self
