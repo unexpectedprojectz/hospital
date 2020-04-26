@@ -5,7 +5,7 @@
     <!-- Menu de dalt -->
     <menuitem id="main_hospital_menu" name="Gestió Hospital"/>
     <!-- Menu lateral -->
-    <menuitem id="hospital_menu" name="Menú - Gestions" parent="main_hospital_menu"/>
+    <menuitem id="hospital_menu" name="Menú - Gestió Hospital" parent="main_hospital_menu"/>
 
 
     <!-- Hospital View -->
