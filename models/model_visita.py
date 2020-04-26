@@ -6,7 +6,7 @@ class Visita(models.Model):
 
     _name = 'hospital.visita'
 
-    data = fields.Date()
+    data = fields.Date(required=True)
 
 
     # MANY TO ONE

@@ -9,6 +9,17 @@
 
 
     <!-- Hospital View -->
+    <record model="ir.ui.view" id="hospital_tree_view">
+        <field name="name">hospital.tree</field>
+        <field name="model">hospital.hospital</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="nom"/>
+                <field name="adreca_id"/>
+            </tree>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="hospitals_form_view">
         <field name="name">hospital.form</field>
         <field name="model">hospital.hospital</field>
@@ -49,6 +60,21 @@
 
 
     <!-- Adreca View -->
+    <record model="ir.ui.view" id="adreca_tree_view">
+        <field name="name">adreca.tree</field>
+        <field name="model">hospital.adreca</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="ciutat"/>
+                <field name="codiPostal"/>
+                <field name="carrer"/>
+                <field name="numero"/>
+                <field name="planta"/>
+                <field name="porta"/>
+            </tree>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="adreca_form_view">
         <field name="name">adreca.form</field>
         <field name="model">hospital.adreca</field>
@@ -100,6 +126,21 @@
 
 
     <!-- Malaltia View -->
+    <record model="ir.ui.view" id="malaltia_tree_view">
+        <field name="name">malaltia.tree</field>
+        <field name="model">hospital.malaltia</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="codi"/>
+                <field name="hospital_id"/>
+                <field name="nom"/>
+                <field name="causaBaixa"/>
+                <field name="tractament"/>
+                <field name="duradaTractament"/>
+            </tree>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="malaltia_form_view">
         <field name="name">malaltia.form</field>
         <field name="model">hospital.malaltia</field>
@@ -107,10 +148,10 @@
             <form string="Malaltia form">
                 <sheet>
                     <group>
+                        <field name="codi"/>
                         <field name="hospital_id"/>
                     </group>
                     <group>
-                        <field name="codi"/>
                         <field name="nom"/>
                         <field name="causaBaixa"/>
                         <field name="tractament"/>
@@ -146,6 +187,18 @@
 
 
     <!-- Historial View -->
+    <record model="ir.ui.view" id="historial_tree_view">
+        <field name="name">historial.tree</field>
+        <field name="model">hospital.historial</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="codi"/>
+                <field name="hospital_id"/>
+                <field name="visita_ids"/>
+            </tree>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="historial_form_view">
         <field name="name">historial.form</field>
         <field name="model">hospital.historial</field>
@@ -153,8 +206,8 @@
             <form string="Historial form">
                 <sheet>
                     <group>
-                        <field name="hospital_id"/>
                         <field name="codi"/>
+                        <field name="hospital_id"/>
                     </group>
                     <group>
                         <field name="visita_ids"/>
@@ -185,6 +238,26 @@
 
 
     <!-- Metge View -->
+    <record model="ir.ui.view" id="metge_tree_view">
+        <field name="name">metge.tree</field>
+        <field name="model">hospital.metge</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="NIF"/>
+                <field name="hospital_id"/>
+                <field name="adreca_id"/>
+                <field name="nom"/>
+                <field name="cognom1"/>
+                <field name="cognom2"/>
+                <field name="numSegSocial"/>
+                <field name="telefon"/>
+                <field name="numEmpleat"/>
+                <field name="salariMensual"/>
+                <field name="codiCompteCorrent"/>
+            </tree>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="metge_form_view">
         <field name="name">metge.form</field>
         <field name="model">hospital.metge</field>
@@ -192,6 +265,7 @@
             <form string="Metge form">
                 <sheet>
                     <group>
+                        <field name="NIF"/>
                         <field name="hospital_id"/>
                         <field name="adreca_id"/>
                     </group>
@@ -200,7 +274,6 @@
                         <field name="cognom1"/>
                         <field name="cognom2"/>
                         <field name="numSegSocial"/>
-                        <field name="NIF"/>
                         <field name="telefon"/>
                         <field name="numEmpleat"/>
                         <field name="salariMensual"/>
@@ -240,6 +313,24 @@
 
 
     <!-- Pacient View -->
+    <record model="ir.ui.view" id="pacient_tree_view">
+        <field name="name">pacient.tree</field>
+        <field name="model">hospital.pacient</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="NIF"/>
+                <field name="hospital_id"/>
+                <field name="adreca_id"/>
+                <field name="historial_id"/>
+                <field name="nom"/>
+                <field name="cognom1"/>
+                <field name="cognom2"/>
+                <field name="numSegSocial"/>
+                <field name="telefon"/>
+            </tree>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="pacient_form_view">
         <field name="name">pacient.form</field>
         <field name="model">hospital.pacient</field>
@@ -247,6 +338,7 @@
             <form string="Pacient form">
                 <sheet>
                     <group>
+                        <field name="NIF"/>
                         <field name="hospital_id"/>
                         <field name="adreca_id"/>
                         <field name="historial_id"/>
@@ -256,7 +348,6 @@
                         <field name="cognom1"/>
                         <field name="cognom2"/>
                         <field name="numSegSocial"/>
-                        <field name="NIF"/>
                         <field name="telefon"/>
                     </group>
                 </sheet>
@@ -290,6 +381,18 @@
 
 
     <!-- Visita View (no necessari botó lateral i enrutament) -->
+    <record model="ir.ui.view" id="visita_tree_view">
+        <field name="name">visita.tree</field>
+        <field name="model">hospital.visita</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="data"/>
+                <field name="metge_id"/>
+                <field name="malaltia_id"/>
+            </tree>
+        </field>
+    </record>
+
     <record model="ir.ui.view" id="visita_form_view">
         <field name="name">visita.form</field>
         <field name="model">hospital.visita</field>
@@ -297,11 +400,11 @@
             <form string="Visita form">
                 <sheet>
                     <group>
-                        <field name="metge_id"/>
-                        <field name="malaltia_id"/>
+                        <field name="data"/>
                     </group>
                     <group>
-                        <field name="data"/>
+                        <field name="metge_id"/>
+                        <field name="malaltia_id"/>
                     </group>
                 </sheet>
             </form>
