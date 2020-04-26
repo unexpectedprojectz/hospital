@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class Hospital(models.Model):
 
     _name = 'hospital.hospital'
+    _rec_name = 'nom'
 
     nom = fields.Char(string= 'Nom hospital', required= True, size= 20)
 

@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class Malaltia(models.Model):
 
     _name = 'hospital.malaltia'
+    _rec_name = 'codi'
 
     codi = fields.Integer(string= 'Codi malaltia', required= True, size= 15)
 

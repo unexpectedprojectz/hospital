@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class Pacient(models.Model):
 
     _name = 'hospital.pacient'
+    _rec_name = 'NIF'
 
     _inherit = 'hospital.persona'
 

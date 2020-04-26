@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class Visita(models.Model):
 
     _name = 'hospital.visita'
+    _rec_name = 'data'
 
     data = fields.Date(required=True)
 

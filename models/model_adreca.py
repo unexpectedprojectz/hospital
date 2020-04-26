@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class Adreca(models.Model):
 
     _name = 'hospital.adreca'
+    _rec_name = 'carrer'
 
     ciutat = fields.Char(string= 'Ciutat', required= False, size= 15)
 

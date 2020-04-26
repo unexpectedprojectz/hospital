@@ -5,6 +5,7 @@ from odoo import models, fields, api
 class Metge(models.Model):
 
     _name = 'hospital.metge'
+    _rec_name = 'NIF'
 
     _inherit = 'hospital.persona'
 
