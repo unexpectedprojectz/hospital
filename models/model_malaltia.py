@@ -14,7 +14,7 @@ class Malaltia(models.Model):
 
     tractament = fields.Char(string= 'Tractament', required=False, size= 20)
 
-    duradaTractament = fields.Char(string= 'Durada tractament', required= True, size= 4)
+    duradaTractament = fields.Char(string= 'Durada tractament', required= False, size= 4)
 
 
     # MANY TO ONE
