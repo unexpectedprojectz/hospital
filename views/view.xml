@@ -5,7 +5,7 @@
     <!-- Menu de dalt -->
     <menuitem id="main_hospital_menu" name="Gestió Hospital"/>
     <!-- Menu lateral -->
-    <menuitem id="hospital_menu" name="Gestions" parent="main_hospital_menu"/>
+    <menuitem id="hospital_menu" name="Menú - Gestions" parent="main_hospital_menu"/>
 
 
     <!-- Hospital View -->
@@ -23,6 +23,16 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="hospital_search_view">
+        <field name="name">hospital.search</field>
+        <field name="model">hospital.hospital</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="nom"/>
+            </search>
         </field>
     </record>
 
@@ -55,6 +65,21 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="adreca_search_view">
+        <field name="name">adreca.search</field>
+        <field name="model">hospital.adreca</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="ciutat"/>
+                <field name="codiPostal"/>
+                <field name="carrer"/>
+                <field name="numero"/>
+                <field name="planta"/>
+                <field name="porta"/>
+            </search>
         </field>
     </record>
 
@@ -96,6 +121,20 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="malaltia_search_view">
+        <field name="name">malaltia.search</field>
+        <field name="model">hospital.malaltia</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="codi"/>
+                <field name="nom"/>
+                <field name="causaBaixa"/>
+                <field name="tractament"/>
+                <field name="duradaTractament"/>
+            </search>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="malaltia_list_action">
         <field name="name">Malalties</field>
         <field name="res_model">hospital.malaltia</field>
@@ -122,6 +161,16 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="historial_search_view">
+        <field name="name">historial.search</field>
+        <field name="model">hospital.historial</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="codi"/>
+            </search>
         </field>
     </record>
 
@@ -162,6 +211,24 @@
         </field>
     </record>
 
+    <record model="ir.ui.view" id="metge_search_view">
+        <field name="name">metge.search</field>
+        <field name="model">hospital.metge</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="nom"/>
+                <field name="cognom1"/>
+                <field name="cognom2"/>
+                <field name="numSegSocial"/>
+                <field name="NIF"/>
+                <field name="telefon"/>
+                <field name="numEmpleat"/>
+                <field name="salariMensual"/>
+                <field name="codiCompteCorrent"/>
+            </search>
+        </field>
+    </record>
+
     <record model="ir.actions.act_window" id="metge_list_action">
         <field name="name">Metges</field>
         <field name="res_model">hospital.metge</field>
@@ -194,6 +261,21 @@
                     </group>
                 </sheet>
             </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="pacient_search_view">
+        <field name="name">pacient.search</field>
+        <field name="model">hospital.pacient</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="nom"/>
+                <field name="cognom1"/>
+                <field name="cognom2"/>
+                <field name="numSegSocial"/>
+                <field name="NIF"/>
+                <field name="telefon"/>
+            </search>
         </field>
     </record>
 
