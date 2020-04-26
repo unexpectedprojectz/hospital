@@ -6,7 +6,7 @@ class Malaltia(models.Model):
 
     _name = 'hospital.malaltia'
 
-    codi = fields.Integer(string= 'Codi malaltia', required= False, size= 15)
+    codi = fields.Integer(string= 'Codi malaltia', required= True, size= 15)
 
     nom = fields.Char(string= 'Nom', required= False, size= 20)
 

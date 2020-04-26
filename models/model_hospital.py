@@ -6,7 +6,7 @@ class Hospital(models.Model):
 
     _name = 'hospital.hospital'
 
-    nom = fields.Char(string= 'Nom hospital', required= False, size= 20)
+    nom = fields.Char(string= 'Nom hospital', required= True, size= 20)
 
 
     # ONE TO MANY

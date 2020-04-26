@@ -6,7 +6,7 @@ class Historial(models.Model):
 
     _name = 'hospital.historial'
 
-    codi = fields.Integer(string= 'Codi historial', required= False, size= 30)
+    codi = fields.Integer(string= 'Codi historial', required= True, size= 30)
 
 
     # MANY TO ONE

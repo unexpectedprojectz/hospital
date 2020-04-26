@@ -10,11 +10,11 @@ class Adreca(models.Model):
 
     codiPostal = fields.Integer(string='Codi postal', required= False, size= 10)
 
-    carrer = fields.Char(string= 'Carrer', required= False, size= 20)
+    carrer = fields.Char(string= 'Carrer', required= True, size= 20)
 
     numero = fields.Integer(string= 'Número', required= False, size= 4)
 
-    planta = fields.Char(string= 'Planta', required= True, size= 3)
+    planta = fields.Char(string= 'Planta', required= False, size= 3)
 
     porta = fields.Char(string= 'Porta', required= False, size= 3)
 

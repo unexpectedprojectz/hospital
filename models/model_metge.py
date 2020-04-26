@@ -10,7 +10,7 @@ class Metge(models.Model):
 
     numEmpleat = fields.Integer(string= 'Núm. empleat', required= False, size= 3)
 
-    salariMensual = fields.Integer(string= 'Salari mensual', required= False, size= 5)
+    salariMensual = fields.Integer(string= 'Salari mensual', required= False, size= 5, help="Expressar el valor en euros")
 
     codiCompteCorrent = fields.Char(string= 'Codi compte corrent', required= False, size= 20)
 
